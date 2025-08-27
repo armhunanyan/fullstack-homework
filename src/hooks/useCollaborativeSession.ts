@@ -170,7 +170,7 @@ export function useCollaborativeSession(): CollaborativeState {
     return () => clearInterval(timer);
   }, []);
 
-  const users = useMemo(() => Array.from(usersMap.values()).sort((a, b) => b.lastActivityTs - a.lastActivityTs), [usersMap]);
+  const users = useMemo(() => Array.from(usersMap.values()), [usersMap]);
 
   return {
     me,
